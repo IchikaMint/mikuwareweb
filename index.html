@@ -3,51 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Awesome Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>MIKU WARE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('MIKUWARE BACKROUND.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .link-circle {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: black;
+            border-radius: 50%;
+        }
+        .button-box {
+            position: absolute;
+            width: 200px;
+            height: 50px;
+            background: black;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .button-box:hover {
+            background: cyan;
+        }
+        /* Positioning */
+        .circle1 { top: 20%; left: 5%; }
+        .circle2 { top: 30%; left: 5%; }
+        .circle3 { top: 40%; left: 5%; }
+        .btn1 { top: 45%; left: 50%; transform: translate(-50%, -50%); }
+        .btn2 { top: 55%; left: 50%; transform: translate(-50%, -50%); }
+        .btn3 { top: 65%; left: 50%; transform: translate(-50%, -50%); }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>My Awesome Website</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="hero">
-        <div class="hero-content">
-            <h2>Welcome to My Awesome Website!</h2>
-            <p>Your journey starts here. We provide the best services just for you.</p>
-            <a href="#services" class="cta-button">Explore Services</a>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are a team of passionate professionals dedicated to offering top-notch services. Learn more about us and our mission.</p>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="service-card">
-            <h3>Web Development</h3>
-            <p>We create stunning websites that are functional and user-friendly.</p>
-        </div>
-        <div class="service-card">
-            <h3>SEO Optimization</h3>
-            <p>We optimize websites to rank higher on search engines and drive more traffic.</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 My Awesome Website. All Rights Reserved.</p>
-    </footer>
+    <div class="overlay">
+        <a href="https://example.com" class="link-circle circle1"></a>
+        <a href="https://example2.com" class="link-circle circle2"></a>
+        <a href="https://example3.com" class="link-circle circle3"></a>
+        
+        <div class="button-box btn1" onclick="location.href='page1.html'">Page 1</div>
+        <div class="button-box btn2" onclick="location.href='page2.html'">Page 2</div>
+        <div class="button-box btn3" onclick="location.href='page3.html'">Page 3</div>
+    </div>
 </body>
 </html>
