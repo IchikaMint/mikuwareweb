@@ -3,63 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIKU WARE</title>
+    <title>Blue Glitter Mouse Effect</title>
     <style>
+        /* Basic styling for the page stupid fucking thing  */
         body {
             margin: 0;
-            padding: 0;
-            background: URL('https://raw.githubusercontent.com/IchikaMint/mikuwareweb/refs/heads/main/MIKUWARE%20BACKROUND.png') no-repeat center center fixed;
+            overflow: hidden;
+            background: url('backround.jpg') no-repeat center center fixed;
             background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            position: relative;
         }
-        .overlay {
+        
+        /* Glitter effect styling */
+        .glitter {
             position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-        .link-circle {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background: black;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, rgba(0, 162, 255, 0.8) 0%, rgba(0, 162, 255, 0) 70%);
             border-radius: 50%;
+            pointer-events: none;
+            animation: fadeOut 0.5s ease-out forwards;
         }
-        .button-box {
+        
+        /* Glitter fade-out animation */
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: scale(2);
+            }
+        }
+        
+        /* Container for the center buttons */
+        .button-container {
             position: absolute;
-            width: 200px;
-            height: 50px;
-            background: black;
-            text-align: center;
-            line-height: 50px;
-            color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 20px;
+        }
+        
+        /* Styling for buttons basic shit  */
+        .button {
+            padding: 10px 20px;
             font-size: 18px;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
+            background-color: rgba(0, 162, 255, 0.8);
+            color: white;
+            transition: background 0.3s;
         }
-        .button-box:hover {
-            background: cyan;
+        
+        .button:hover {
+            background-color: rgba(0, 162, 255, 1);
         }
-        /* Positioning */
-        .circle1 { top: 20%; left: 5%; }
-        .circle2 { top: 30%; left: 5%; }
-        .circle3 { top: 40%; left: 5%; }
-        .btn1 { top: 45%; left: 50%; transform: translate(-50%, -50%); }
-        .btn2 { top: 55%; left: 50%; transform: translate(-50%, -50%); }
-        .btn3 { top: 65%; left: 50%; transform: translate(-50%, -50%); }
+        
+        /* Container for clickable circles */
+        .circle-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        
+        /* Styling for clickable circles */
+        .circle {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 162, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .circle:hover {
+            background-color: rgba(0, 162, 255, 1);
+        }
     </style>
 </head>
 <body>
-    <div class="overlay">
-        <a href="https://example.com" class="link-circle circle1"></a>
-        <a href="https://example2.com" class="link-circle circle2"></a>
-        <a href="https://example3.com" class="link-circle circle3"></a>
-        
-        <div class="button-box btn1" onclick="location.href='page1.html'">Page 1</div>
-        <div class="button-box btn2" onclick="location.href='page2.html'">Page 2</div>
-        <div class="button-box btn3" onclick="location.href='page3.html'">Page 3</div>
+    <!-- Clickable circsles for navigation -->
+    <div class="circle-container">
+        <a href="https://example.com" class="circle" target="_blank">A</a>
+        <a href="https://example.org" class="circle" target="_blank">B</a>
     </div>
+    
+    <!-- Centered buttons -->
+    <div class="button-container">
+        <button class="button">Button 1</button>
+        <button class="button">Button 2</button>
+        <button class="button">Button 3</button>
+    </div>
+    
+    <script>
+        // Create glitter effect that follows the mouse
+        document.addEventListener("mousemove", function(e) {
+            let glitter = document.createElement("div");
+            glitter.classList.add("glitter");
+            document.body.appendChild(glitter);
+            
+            glitter.style.left = `${e.clientX}px`;
+            glitter.style.top = `${e.clientY}px`;
+            
+            // Remove the glitter effect after a shorrt delay
+            setTimeout(() => {
+                glitter.remove();
+            }, 500);
+        });
+    </script>
 </body>
 </html>
