@@ -1,1 +1,180 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop - MikuWare</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .background {
+      background: url('backround.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      color: white;
+      text-shadow: 0 0 10px black;
+      overflow: hidden;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .owners-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #ffffff;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    }
+
+    .top-icons {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      padding-top: 10px;
+    }
+
+    .top-icons img {
+      width: 120px;
+      height: auto;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 20px #000000aa;
+      transition: transform 0.3s ease;
+    }
+
+    .top-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .content {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .product-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .product {
+      position: relative;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product h2 {
+      font-size: 1.5rem;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      margin: 0;
+    }
+
+    .product button {
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      color: #ffffff;
+      background: rgba(0, 255, 255, 0.2);
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-top: 2px solid #ffffff;
+      transition: background 0.3s ease;
+    }
+
+    .product button:hover {
+      background: rgba(0, 255, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <h2 class="owners-title fade-in" style="animation-delay: 0.2s;">Shop</h2>
+
+    <div class="top-icons fade-in" style="animation-delay: 0.3s;">
+      <img src="chickendiscord.png" alt="Chickenmaster">
+      <img src="ichikasdiscod.png" alt="Ichika">
+    </div>
+
+    <div class="content fade-in" style="animation-delay: 0.6s;">
+      <h1>Welcome to MikuWare Shop</h1>
+      <p>Choose from our selection of ethical hacking tools and cheats, for educational purposes.</p>
+
+      <div class="product-grid fade-in" style="animation-delay: 1s;">
+        <!-- Product 1 -->
+        <div class="product">
+          <img src="product1.jpg" alt="Product 1">
+          <h2>Product 1</h2>
+          <button>Purchase</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+          <img src="product2.jpg" alt="Product 2">
+          <h2>Product 2</h2>
+          <button>Purchase</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product">
+          <img src="product3.jpg" alt="Product 3">
+          <h2>Product 3</h2>
+          <button>Purchase</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
