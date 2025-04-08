@@ -1,122 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Glitter Mouse Effect</title>
-    <style>
-        /* Basic styling for the page stupid fucking thing  */
-        body {
-            margin: 0;
-            overflow: hidden;
-            background: url('https://raw.githubusercontent.com/IchikaMint/mikuwareweb/refs/heads/main/backround.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
-        
-        /* Glitter effect styling */
-        .glitter {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: radial-gradient(circle, rgba(0, 162, 255, 0.8) 0%, rgba(0, 162, 255, 0) 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: fadeOut 0.5s ease-out forwards;
-        }
-        
-        /* Glitter fade-out animation */
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-                transform: scale(2);
-            }
-        }
-        
-        /* Container for the center buttons */
-        .button-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            gap: 20px;
-        }
-        
-        /* Styling for buttons basic shit  */
-        .button {
-            padding: 10px 20px;
-            font-size: 18px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: rgba(0, 162, 255, 0.8);
-            color: white;
-            transition: background 0.3s;
-        }
-        
-        .button:hover {
-            background-color: rgba(0, 162, 255, 1);
-        }
-        
-        /* Container for clickable circles */
-        .circle-container {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            display: flex;
-            gap: 15px;
-        }
-        
-        /* Styling for clickable circles */
-        .circle {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(0, 162, 255, 0.8);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        
-        .circle:hover {
-            background-color: rgba(0, 162, 255, 1);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chickenmaster & Ichika</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .background {
+      background: url('backround.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      color: white;
+      text-shadow: 0 0 10px black;
+      overflow: hidden;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .owners-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #ffffff;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    }
+
+    .top-icons {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      padding-top: 10px;
+    }
+
+    .top-icons img {
+      width: 120px;
+      height: auto;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 20px #000000aa;
+      transition: transform 0.3s ease;
+    }
+
+    .top-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .content {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .buttons a {
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #ffffff;
+      text-decoration: none;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .buttons a:hover {
+      background: rgba(0, 255, 255, 0.2);
+      border-color: #0ff;
+      color: #0ff;
+      transform: scale(1.08);
+      box-shadow: 0 0 15px #0ff, 0 0 40px #0ff33f3a;
+    }
+  </style>
 </head>
 <body>
-    <!-- Clickable circsles for navigation -->
-    <div class="circle-container">
-        <a href="https://example.com" class="circle" target="_blank">A</a>
-        <a href="https://example.org" class="circle" target="_blank">B</a>
+  <div class="background">
+    <h2 class="owners-title fade-in" style="animation-delay: 0.2s;">Owners</h2>
+
+    <div class="top-icons fade-in" style="animation-delay: 0.3s;">
+      <img src="chickendiscord.png" alt="Chickenmaster">
+      <img src="ichikasdiscod.png" alt="Ichika">
     </div>
-    
-    <!-- Centered buttons -->
-    <div class="button-container">
-        <button class="Shop">Button 1</button>
-        <button class="Client Area">Button 2</button>
-        <button class="Tools">Button 3</button>
+
+    <div class="content fade-in" style="animation-delay: 0.6s;">
+      <h1>Welcome</h1>
+      <p>Chickenmaster & Ichika's Domain</p>
+
+      <div class="buttons fade-in" style="animation-delay: 1s;">
+        <a href="#">Home</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+      </div>
     </div>
-    
-    <script>
-        // Create glitter effect that follows the mouse
-        document.addEventListener("mousemove", function(e) {
-            let glitter = document.createElement("div");
-            glitter.classList.add("glitter");
-            document.body.appendChild(glitter);
-            
-            glitter.style.left = `${e.clientX}px`;
-            glitter.style.top = `${e.clientY}px`;
-            
-            // Remove the glitter effect after a shorrt delay
-            setTimeout(() => {
-                glitter.remove();
-            }, 500);
-        });
-    </script>
+  </div>
 </body>
 </html>
